@@ -57,6 +57,5 @@ form.addEventListener(`submit`, function (e) {
   e.preventDefault();
   getWeatherData(city);
 });
-const weatherLink1 = `https://api.openweathermap.org/data/2.5/weather?q=Szczecin&units=metric&appid=28fe7b5f9a78838c639143fc517e4343`;
 
 getWeatherData(`London`);
