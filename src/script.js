@@ -6,11 +6,18 @@ const feelsTempShow = document.querySelector(`.feelsTemp`);
 const humidity = document.querySelector(`.humidity`);
 const form = document.querySelector(`.form`);
 const weatherTab = document.querySelector(`.weather-tab`);
-const weatherBig = document.querySelector(`.left-side`);
+const weatherBig = document.querySelector(`.left-side-container`);
 const weatherType = document.querySelector(`.weather-type`);
+const windSpeed = document.querySelector(`.wind-speed`);
+const clouds = document.querySelector(`.cloud-percentage`);
+
+const mphToKmhConv = function (mph) {
+  return mph * 1.609344;
+};
+
 const convertWeatherData = function (data) {
   const {
-    clouds: clouds,
+    clouds: { all: clouds },
     wind: { speed: speed },
     name: cityName,
     main: { temp: temperature, feels_like: feelsLike, humidity: humidity },
@@ -35,7 +42,11 @@ const getWeatherData = async function (city) {
   feelsTempShow.textContent = `Feels like temperature: ${data.feelsLike.toFixed(
     0
   )}°`;
-  humidity.innerHTML = `Humidity: ${data.humidity}%`;
+  humidity.textContent = `Humidity: ${data.humidity}%`;
+  windSpeed.textContent = `Wind speed: ${mphToKmhConv(data.speed).toFixed(
+    1
+  )} Km/h`;
+  clouds.textContent = `Clouds ${data.clouds}%`;
   cityInput.value = ``;
   weatherTab.style.display = `flex`;
   weatherBig.style.display = `flex`;
@@ -52,3 +63,5 @@ const response1 = fetch(weatherLink1)
   .then((res) => res.json())
   .then((res) => console.log(res));
 console.log(response1);
+
+getWeatherData(`London`);

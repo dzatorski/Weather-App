@@ -18,7 +18,6 @@ main {
   display: flex;
   height: 100vh;
   justify-content: space-between;
-  padding: 3rem;
 }
 
 .humidity {
@@ -30,20 +29,34 @@ form {
   align-items: center;
   justify-content: center;
 }
+.right-side-container {
+  backdrop-filter: blur(70px);
+  width: 25%;
+}
 .right-side {
   display: flex;
   align-items: flex-start;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 10rem;
 }
 .left-side {
-  display: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   gap: 1rem;
-  align-items: flex-end;
+}
+.left-side,
+.right-side {
+  padding: 2rem;
 }
 .weather-tab {
   display: none;
   flex-direction: column;
-  width: 30%;
-  height: 100%;
+  gap: 5rem;
+  border-top: 1px solid;
+  border-bottom: 1px solid;
+  padding: 1rem;
 }
 .city-name {
   font-size: 3rem;
@@ -55,7 +68,22 @@ form {
   font-size: 2rem;
 }
 .left-side-container {
-  display: flex;
+  display: none;
   align-items: center;
   gap: 1rem;
+}
+
+.city-input {
+  border: none;
+  outline: none;
+  background: white;
+  padding: 1rem 1.5rem;
+  width: 100%;
+  transition: 0.7s;
+  border-radius: 3%;
+}
+.additional {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
 }
