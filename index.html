@@ -1,10 +1,40 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
-    <meta charset="utf-8" />
-    <title>Output Management</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <script defer="defer" src="main.bundle.js"></script>
-  </head>
-  <body></body>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather App</title>
+  <script defer src="runtime.bundle.js"></script><script defer src="script.bundle.js"></script></head>
+  <body>
+    <main class="main">
+      <div class="left-side">
+        weather-app
+        <div class="left-side-container">
+          <div class="temp">13</div>
+          <div class="container">
+            <div class="city-name">LOL</div>
+            <div class="weather-type"></div>
+          </div>
+          <icon></icon>
+        </div>
+      </div>
+      <div class="right-side-container">
+        <div class="right-side">
+          <form class="form">
+            <input placeholder="City..." class="city-input" />
+          </form>
+          <div class="weather-tab">
+            <div class="additional-header">Weather details:</div>
+            <div class="additional">
+              <div class="feelsTemp"></div>
+              <div class="humidity"></div>
+              <div class="wind-speed"></div>
+              <div class="cloud-percentage"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </body>
 </html>
