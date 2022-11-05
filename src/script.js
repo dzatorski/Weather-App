@@ -23,7 +23,6 @@ const convertWeatherData = function (data) {
     main: { temp: temperature, feels_like: feelsLike, humidity: humidity },
   } = data;
   let weather = data.weather[0].description;
-  console.log(weather);
   return { cityName, temperature, feelsLike, humidity, weather, speed, clouds };
 };
 
@@ -59,9 +58,5 @@ form.addEventListener(`submit`, function (e) {
   getWeatherData(city);
 });
 const weatherLink1 = `https://api.openweathermap.org/data/2.5/weather?q=Szczecin&units=metric&appid=28fe7b5f9a78838c639143fc517e4343`;
-const response1 = fetch(weatherLink1)
-  .then((res) => res.json())
-  .then((res) => console.log(res));
-console.log(response1);
 
 getWeatherData(`London`);
